@@ -1,0 +1,1 @@
+- Mofify timer0 to automatically select a prescaler so increments stay within ~30ms (if possible)
