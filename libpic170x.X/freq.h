@@ -3,6 +3,8 @@
  * Author: paul
  *
  * Created on 20. Juli 2018, 20:12
+ * 
+ * 
  */
 
 #ifndef FREQ_H
@@ -10,8 +12,6 @@
 
 #ifndef _XTAL_FREQ 
 #error "_XTAL_FREQ must be set to a valid value"
-#else
-#define _XTAL_FREQ 2000000
 #endif
 
 #if _XTAL_FREQ == 8000000
