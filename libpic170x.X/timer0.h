@@ -1,7 +1,7 @@
 /**
- * File:   timer0.h
- * Author: paul
- *
+ * \file timer0.h
+ * 
+ * Author: Paul Konstantin Gerke
  * Created on 2018-07-20
  * 
  * Timer0 configures timer0 of a PIC16(L)F170x chip as continuous ms 
@@ -27,6 +27,7 @@
 #include <stdint.h>
 
 /**
+ * \struct Timer0;
  * Provides access to the timer counter values. Values are writeable if a reset
  * of the counter is desired.
  */

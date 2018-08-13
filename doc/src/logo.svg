@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="421.41785"
+   height="252.88081"
+   viewBox="0 0 111.50014 66.908047"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/home/paul/code/hardware/libpic170x/doc/src/logo.svg.png"
+   inkscape:export-xdpi="18.98"
+   inkscape:export-ydpi="18.98">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="174.73072"
+     inkscape:cy="151.86856"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g5464"
+     showgrid="false"
+     fit-margin-top="5"
+     fit-margin-left="5"
+     fit-margin-right="5"
+     fit-margin-bottom="5"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="1600"
+     inkscape:window-y="120"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-56.246351,-112.57701)">
+    <g
+       id="g5437">
+      <g
+         id="g5464">
+        <g
+           id="g5571">
+          <g
+             style="stroke-width:1.33401704"
+             transform="matrix(0.74986784,0,0,0.74936349,29.417315,28.979881)"
+             id="g5489">
+            <path
+               style="opacity:1;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.44942647;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:2.69655883, 0.44942645;stroke-dashoffset:0;stroke-opacity:1"
+               d="m 109.47243,113.5476 -1.28628,14.6665 -1.23643,13.89699 13.33432,-6.21861 12.64422,-5.87735 -9.87166,-6.92166 c 2.55703,-2.09978 5.76006,-3.25286 9.06846,-3.26461 7.93729,1.5e-4 14.3716,6.43609 14.3714,14.37505 0.26947,10.09572 -14.28344,15.07809 -14.3714,14.37443 v 3.9293 c -0.12147,0.83003 17.72723,-4.28541 18.29923,-18.30373 1.4e-4,-10.10868 -8.19268,-18.30351 -18.29923,-18.30372 -4.58952,0.0157 -9.00558,1.75577 -12.37265,4.8752 z"
+               id="path4591-3"
+               inkscape:connector-curvature="0"
+               sodipodi:nodetypes="cccccccccccccc" />
+            <g
+               style="stroke-width:1.33401704"
+               id="g4555"
+               transform="matrix(0,-0.00226627,0.00226627,0,69.197417,160.92224)">
+              <title
+                 id="title4518">28-pin DIP, by Adam Stanislav</title>
+              <g
+                 id="Pins"
+                 style="fill:#f0f0f0;stroke:#333333;stroke-width:40.02051163">
+                <g
+                   style="stroke-width:40.02051163"
+                   id="LeftPins">
+                  <path
+                     style="stroke-width:40.02051163"
+                     d="m 444,799.5 v 762 H 190 v -762 z"
+                     id="SmallPin"
+                     inkscape:connector-curvature="0" />
+                  <path
+                     style="stroke-width:40.02051163"
+                     d="m 444,2958.5 v 1143 H 190 v -1143 z"
+                     id="Pin"
+                     inkscape:connector-curvature="0" />
+                  <use
+                     style="stroke-width:40.02051163"
+                     id="use4522"
+                     y="2540"
+                     xlink:href="#Pin"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                  <use
+                     style="stroke-width:40.02051163"
+                     id="use4524"
+                     y="5080"
+                     xlink:href="#Pin"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                  <use
+                     style="stroke-width:40.02051163"
+                     id="use4526"
+                     y="7620"
+                     xlink:href="#Pin"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                  <use
+                     style="stroke-width:40.02051163"
+                     id="use4528"
+                     y="10160"
+                     xlink:href="#Pin"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                  <use
+                     style="stroke-width:40.02051163"
+                     id="use4530"
+                     y="12700"
+                     xlink:href="#Pin"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                  <use
+                     style="stroke-width:40.02051163"
+                     id="use4532"
+                     y="15240"
+                     xlink:href="#Pin"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                  <use
+                     style="stroke-width:40.02051163"
+                     id="use4534"
+                     y="17780"
+                     xlink:href="#Pin"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                  <use
+                     style="stroke-width:40.02051163"
+                     id="use4536"
+                     y="20320"
+                     xlink:href="#Pin"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                  <use
+                     style="stroke-width:40.02051163"
+                     id="use4538"
+                     y="22860"
+                     xlink:href="#Pin"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                  <use
+                     style="stroke-width:40.02051163"
+                     id="use4540"
+                     y="25400"
+                     xlink:href="#Pin"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                  <use
+                     style="stroke-width:40.02051163"
+                     id="use4542"
+                     y="27940"
+                     xlink:href="#Pin"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                  <use
+                     style="stroke-width:40.02051163"
+                     id="use4544"
+                     y="32859.5"
+                     xlink:href="#SmallPin"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                </g>
+                <use
+                   style="stroke-width:40.02051163"
+                   id="use4547"
+                   x="7366"
+                   xlink:href="#LeftPins"
+                   y="0"
+                   width="100%"
+                   height="100%" />
+              </g>
+              <g
+                 id="Chip"
+                 style="stroke:#000000;stroke-width:100.05127716">
+                <rect
+                   id="rect4550"
+                   height="34544"
+                   width="7112"
+                   y="228"
+                   x="444"
+                   style="fill:#555555;stroke-width:100.05127716" />
+                <path
+                   id="path4552"
+                   d="m 5778,228 a 1778,1333.5 0 0 1 -3556,0 z"
+                   inkscape:connector-curvature="0"
+                   style="fill:#999999;stroke-width:100.05127716" />
+              </g>
+            </g>
+          </g>
+          <text
+             id="text4589"
+             y="173.65826"
+             x="55.528778"
+             style="font-style:normal;font-weight:normal;font-size:21.65244865px;line-height:125%;font-family:Drift;-inkscape-font-specification:Drift;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             xml:space="preserve"><tspan
+               style="stroke-width:0.26458332px"
+               y="173.65826"
+               x="55.528778"
+               id="tspan4587"
+               sodipodi:role="line">libpic170x</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
