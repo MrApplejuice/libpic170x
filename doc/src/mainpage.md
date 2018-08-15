@@ -9,7 +9,7 @@ Please refer to the [Usage](#mainpage-usage) section for details on how to use t
 
 # Features
 
-- [Timer0 library](@ref timer0-guide) for rough time-keeping
+- [Timer0 library](@ref timer0-guide) for coarse time-keeping
 
 # Usage  {#mainpage-usage}
 
@@ -45,7 +45,7 @@ There is not much to gain by using this form of inclusion, I feel, but it is pos
     - Dependent on _XTAL_FREQ
     - Extra settings in a custom `defaults.h` file
 
-# Library dependency tree
+# Library dependency tree     {#mainpage-dependency-tree}
 
 The dependency tree indicates what headers nad libraries are required to be included for usinga given feature. `freq.h` forms the basis for all other libraries since it defines important timing constants for all other libraries, so it must always be available. For all other libraries all direct and indirect dependecies must be available for the library to function.
 
