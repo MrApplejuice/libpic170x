@@ -31,8 +31,8 @@
  * 
  * OSCCAL_BITS
  * -----------
- * One of the core-featues of freq.h is that is exposes the OSCCON bits that the 
- * main application should set through the preprocessor definition 
+ * One of the core-featues of `freq.h` is that is exposes the OSCCON bits that 
+ * the  main application should set through the preprocessor definition 
  * `OSCCON_BITS`. Before using any other library functions this OSCCON bits 
  * should be set by the application using libpic170x.
  * 

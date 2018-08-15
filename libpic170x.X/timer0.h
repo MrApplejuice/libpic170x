@@ -43,7 +43,7 @@ typedef struct {
 
 /**
  * Internal default pic170x_timer0 structure that will be used by the functions
- * timer0_init() and timer0_ih() if not alternative is specified.
+ * timer0_init() and timer0_ih() if no alternative is specified.
  */
 extern Timer0 pic170x_timer0;
 
