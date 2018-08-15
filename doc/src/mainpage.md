@@ -11,8 +11,26 @@ Please refer to the [Usage](#mainpage-usage) section for details on how to use t
 
 - [Timer0 library](@ref timer0-guide) for rough time-keeping
 
+# Library dependency tree
+
+
 
 # Usage  {#mainpage-usage}
+
+The library can be used in two different ways:
+
+- A static library in the `*.lpp` format
+- As inlined sources
+
+Using the library as inlined sources is most likely the most useful way of using the library since the library uses preprocessor macros to compile certain library settings directly into the library to save program memory.
+
+## Use as inlined sources
+
+Using the library as inlined sources is most likely the easiest way to use the library. Just copy all the source files for libraries that you would like to use into your your project and compile them yourself. There are not many things to consider. You only need to define `_XTAL_FREQ` to match your desired processor frequency and you are ready to roll!
+
+## Use as static library
+
+There is not much to gain by using this form of inclusion, I feel, but it is possible. 
 
 - Library must be compiled with specific settings
     - Dependent on _XTAL_FREQ
