@@ -1,14 +1,19 @@
-libpic170x
-==========
+libpic170x library
+==================
 
-The libpic170x modular toolbox library that is intended to make regular tasks less painful to implement by either giving a basis to work off, or a toolbox to take components from to help to get done what one needs to get done.
+[TOC]
 
-The library was developed for the [PIC16(L)F1705](https://www.microchip.com/wwwproducts/en/PIC16F1705) and [PIC16(L)F1709](https://www.microchip.com/wwwproducts/en/PIC16F1709) microcontrollers. It is likely that the library will not work with other microcontrollers.
+The libpic170x modular toolbox library that is intended to make using certain functions of a PIC microcontroller less painful to implement by either giving a basis to work off, or asa a toolbox to take components from. The library was developed for the [PIC16(L)F1705](https://www.microchip.com/wwwproducts/en/PIC16F1705) and [PIC16(L)F1709](https://www.microchip.com/wwwproducts/en/PIC16F1709) microcontrollers. It is likely that the library will not work with other microcontrollers.
 
-## Features
+Please refer to the [Usage](#mainpage-usage) section for details on how to use the library before attempting to use it!
 
-- [Timer0 library](doc/src/guide_timer0.md) for rough time-keeping
+# Features
+
+- [Timer0 library](@ref timer0-guide) for rough time-keeping
 
 
-## Usage
+# Usage  {#mainpage-usage}
 
+- Library must be compiled with specific settings
+    - Dependent on _XTAL_FREQ
+    - Extra settings in a custom `defaults.h` file

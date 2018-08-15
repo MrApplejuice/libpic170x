@@ -1,8 +1,8 @@
 /**
  * \file timer0.h
  * 
- * Author: Paul Konstantin Gerke
- * Created on 2018-07-20
+ * \author Paul Konstantin Gerke
+ * \date 2018-07-20
  * 
  * Timer0 configures timer0 of a PIC16(L)F170x chip as continuous ms 
  * counter. The values of the continuous counter are stored in the global
@@ -40,11 +40,16 @@ typedef struct {
      */
     uint16_t us;
 } Timer0;
+
+/**
+ * Internal default pic170x_timer0 structure that will be used by the functions
+ * timer0_init() and timer0_ih() if not alternative is specified.
+ */
 extern Timer0 pic170x_timer0;
 
 /**
- * Initializes the given timer0 structure. This function reconfigures the 
- * registers:
+ * Initializes timer0 and the given timer0 structure. This function 
+ * reconfigures the PIC registers:
  * 
  * - TMR0CS
  * - OPTION_REG

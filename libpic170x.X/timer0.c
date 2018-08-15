@@ -13,7 +13,7 @@ void timer0_init(Timer0 *timer0) {
     TMR0CS = 0;
     
     // Enable prescaler 1:256
-    OPTION_REG = (unsigned char) (OPTION_REG & 0b11010000) | 0b00000111;
+    OPTION_REG = (unsigned char) (OPTION_REG & 0b11010000) | TIMER0_PRESCALE_BITS;
     
     // Enable interrupts
     TMR0IE = 1;

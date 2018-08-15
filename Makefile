@@ -8,6 +8,11 @@ xc8_opts += --chip=$(chip) --double=24 --float=24 --opt=+asm,+asmfile,-speed,+sp
 
 build_dir = build
 
+
+header_files = \
+	libpic170x.X/timer0.h \
+	libpic170x.X/freq.h \
+
 .PHONY: all doc
 
 all: libpic170x.lpp
@@ -15,9 +20,9 @@ all: libpic170x.lpp
 libpic170x.lpp: $(build_dir)/timer0.p1
 	$(xc8) $(xc8_opts) --output=lpp -O$@ $^
 
-$(build_dir)/%.p1: libpic1i70x.X/%.c
+$(build_dir)/%.p1: libpic170x.X/%.c $(header_files)
 	mkdir -p $(build_dir)
-	$(xc8) $(xc8_opts) --pass1 -O$@ $^
+	$(xc8) $(xc8_opts) --pass1 -O$@ $<
 
 doc:
 	doxygen
