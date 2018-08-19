@@ -37,13 +37,31 @@ Using the library as inlined sources is most likely the easiest way to use the l
 
 ## Use as static library
 
-There is not much to gain by using this form of inclusion, I feel, but it is possible. 
+Using the library as a static library allows staying up to date with the latest releases of the library easily. However, due to the light-weight setup of the library certain aspects like clock speeds and prescaler factors are directly compiled to binary code and cannot be set when using the library. The values in question specifically are:
 
-**TODO**
+- Chip type. Supported are: 16F1705 16LF1705 16F1709 16LF1709
+- Base frequency. Supported frequencies are: 32000000 16000000 8000000 4000000 2000000 1000000 500000
 
-- Library must be compiled with specific settings
-    - Dependent on _XTAL_FREQ
-    - Extra settings in a custom `defaults.h` file
+To allow users to select the chip type and clock speed when setting up a project the compiled library name includes the parameter selection for `chip` and `frequency` in its name. Example:
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+libpic170x_16LF1705_2000000.lpp
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This library is compiled for a PIC16LF1705 micro controller running its main processor clock at 2 MHz.
+
+The sources for `libpic170x` contain a convenience bash-script with the name `build_all.sh` which will build all supported combinations of chip and frequencies in one go. Alternatively, if only one parameter set must be built, it is possible to control which library is being built by defining the make variables `chip` and `xtal_freq` and setting them to the apropriate parameters. Example: `make chip=16LF1705 xtal_freq=8000000` will build `libpic170x_16LF1705_8000000.lpp`.
+
+### Project compile options
+
+After the library is built, it will be placed in the install-directory of the project. Configure your PIC-project as follows:
+
+- Add _XTAL_FREQ compiler definition matching the library build flags.
+- Add include directory `install/include` to your project
+- Add the correct link library for your settings from the `install/` directory
+
+Then your are set. For a working example, check the blink-demo application from the examples-directory.
+
 
 # Library dependency tree     {#mainpage-dependency-tree}
 
@@ -55,7 +73,7 @@ digraph lib_dep_tree {
   rankdir=BT;
 
   node [shape=block,fontcolor=blue];
-  
+
   freq_h[label="freq.h", URL="@ref freq.h"];
   timer0[URL="@ref timer0-guide"];
 

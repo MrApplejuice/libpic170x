@@ -1,5 +1,4 @@
 /**
- * \title Blablalbal
  * \file freq.h
  * \author paul
  * \date 2018-07-20

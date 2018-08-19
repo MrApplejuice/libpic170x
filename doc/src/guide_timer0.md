@@ -31,7 +31,7 @@ void interrupt interrupt_handler() {
 
 int main() {
   OSCCON = OSCCON_BITS;
-  
+
   timer0_init(NULL);
   GIE = 1; // Interrupts must be enabled manually
 
@@ -61,4 +61,23 @@ while (pic170x_timer0.ms < 10000) {
 
 ~~~~~~~~~~~~~~~~~~
 
-This can be useful when waiting for user input, or to implement blocking I/O with timeout functionality.
+This can be useful when waiting for user input, or to implement blocking I/O with timeout functionality. One important thing to keep in mind is that if doing read-check-modify operations interrupt-updated values (e.g. `pic170x_timer0`), GIE should be disabled during the interaction, to prevent undefined states from ocurring:
+
+~~~~~~~~~~~~~~~~~~{.c}
+
+// Prevent timer from being updated by
+// the interrupt, leading to undefined values
+GIE = 0;
+
+if (pic170x_timer0.ms > 1000) {
+  pic170x_timer0.ms -= 1000;
+  GIE = 1;
+
+  do_sth();
+} else {
+  GIE = 1;
+}
+
+
+~~~~~~~~~~~~~~~~~~
+
