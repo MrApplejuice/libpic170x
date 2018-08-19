@@ -1,3 +1,19 @@
+/*
+   Copyright 2018 Paul Konstantin Gerke
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ */
+
 // PIC16LF1705 Configuration Bit Settings
 
 // 'C' source line config statements
@@ -30,24 +46,38 @@
 #include <freq.h>
 #include <timer0.h>
 
+/**
+ * Interrupt handler for updating timer0.
+ */
 void interrupt int_handler() {
     timer0_ih(NULL);
 }
 
+/**
+ * The main implements a "blink" for an LED that is conencted to pin RC0. The
+ * connected LED will approximately blink once every second.
+ */
 int main() {
+    // Set OSCCON bits from library definitions
     OSCCON = OSCCON_BITS;
     
+    // Intilaize timer0 and enable interrupts
     timer0_init(NULL);
     GIE = 1;
 
-    // Setup the timer library...
+    // Configure RC0 as output
     TRISCbits.TRISC0 = 0;
     LATCbits.LATC0 = 0;
+    
     while (1) {
+        // Check if 1 scond has expired. Disable intterupts during the 
+        // check&modify operation.
         GIE = 0;
         if (pic170x_timer0.ms > 1000) {
+            
+            // If yes, toggle the output signal on/off.
             LATCbits.LATC0 = !LATCbits.LATC0;
-            pic170x_timer0.ms -= (uint32_t) 1000;
+            pic170x_timer0.ms -= 1000;
         }
         GIE = 1;
     }

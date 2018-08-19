@@ -7,6 +7,10 @@ The libpic170x modular toolbox library that is intended to make using certain fu
 
 Please refer to the [Usage](#mainpage-usage) section for details on how to use the library before attempting to use it!
 
+# License
+
+This library is licensed under the Apache License, Version 2.0. See the the attached [LICENSE.md](@ref LICENSE.md) file for details.
+
 # Features
 
 - [Timer0 library](@ref timer0-guide) for coarse time-keeping
@@ -39,8 +43,19 @@ Using the library as inlined sources is most likely the easiest way to use the l
 
 Using the library as a static library allows staying up to date with the latest releases of the library easily. However, due to the light-weight setup of the library certain aspects like clock speeds and prescaler factors are directly compiled to binary code and cannot be set when using the library. The values in question specifically are:
 
-- Chip type. Supported are: 16F1705 16LF1705 16F1709 16LF1709
-- Base frequency. Supported frequencies are: 32000000 16000000 8000000 4000000 2000000 1000000 500000
+- Chip type. Supported chips are:
+    - chip=16F1705
+    - chip=16LF1705
+    - chip=16F1709
+    - chip=16LF1709
+- Base frequency. Supported frequencies are:
+    - xtal_freq=32000000
+    - xtal_freq=16000000
+    - xtal_freq=8000000
+    - xtal_freq=4000000
+    - xtal_freq=2000000
+    - xtal_freq=1000000
+    - xtal_freq=500000
 
 To allow users to select the chip type and clock speed when setting up a project the compiled library name includes the parameter selection for `chip` and `frequency` in its name. Example:
 
