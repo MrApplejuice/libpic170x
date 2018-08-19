@@ -3,9 +3,9 @@ libpic170x library
 
 [TOC]
 
-The libpic170x modular toolbox library that is intended to make using certain functions of a PIC microcontroller less painful to implement by either giving a basis to work off, or asa a toolbox to take components from. The library was developed for the [PIC16(L)F1705](https://www.microchip.com/wwwproducts/en/PIC16F1705) and [PIC16(L)F1709](https://www.microchip.com/wwwproducts/en/PIC16F1709) microcontrollers. It is likely that the library will not work with other microcontrollers.
+The libpic170x modular toolbox that is intended to make using or implemeting certain features of a PIC microcontroller less painful. It either gives a basis to work off, or provides a modular library to build an application from. The library was developed for the [PIC16(L)F1705](https://www.microchip.com/wwwproducts/en/PIC16F1705) and [PIC16(L)F1709](https://www.microchip.com/wwwproducts/en/PIC16F1709) microcontrollers. It is likely that the library will not work with other microcontrollers.
 
-Please refer to the [Usage](#mainpage-usage) section for details on how to use the library before attempting to use it!
+Please refer to the [Usage](#mainpage-usage) section for details on how to use the library.
 
 # License
 
@@ -19,14 +19,14 @@ This library is licensed under the Apache License, Version 2.0. See the the atta
 
 The library can be used in two different ways:
 
-- A static library in the `*.lpp` format
-- As inlined sources
+- [As inlined sources](@ref mainpage-as-inline)
+- [A static library in the `*.lpp` format](@ref mainpage-as-library)
 
 Using the library as inlined sources is most likely the most useful way of using the library since the library uses preprocessor macros to compile certain library settings directly into the library to save program memory.
 
 ## Requirements
 
-In order to compile and use any piece of the project you must have installed:
+In order to compile and use any part of the library you must have installed:
 
 - [xc8 compiler](https://www.microchip.com/mplab/compilers) from Microchip
 
@@ -39,7 +39,7 @@ Additional dependecies:
 
 Using the library as inlined sources is most likely the easiest way to use the library. Just copy all the source files for libraries that you would like to use into your your project and compile them yourself. There are not many things to consider. You only need to define `_XTAL_FREQ` to match your desired processor frequency and you are ready to roll!
 
-## Use as static library
+## Use as static library     {#mainpage-as-library}
 
 Using the library as a static library allows staying up to date with the latest releases of the library easily. However, due to the light-weight setup of the library certain aspects like clock speeds and prescaler factors are directly compiled to binary code and cannot be set when using the library. The values in question specifically are:
 
