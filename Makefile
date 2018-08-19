@@ -1,6 +1,6 @@
 # Unix makefile for building
 
-chip = 16F1705
+chip ?= 16F1705
 xtal_freq ?= 8000000
 
 xc8 ?= /opt/microchip/xc8/*/bin/xc8
@@ -12,8 +12,9 @@ xc8_opts += \
 	--mode=free \
 	-D_XTAL_FREQ=$(xtal_freq)
 
-build_dir = build
 
+main_target = install/libpic170x_$(chip)_$(xtal_freq).lpp
+build_dir = build/$(chip)/$(xtal_freq)
 
 header_files = \
 	libpic170x.X/timer0.h \
@@ -24,9 +25,9 @@ install_header_files = \
 
 .PHONY: all doc
 
-all: install/libpic170x.lpp $(install_header_files)
+all: $(main_target) $(install_header_files)
 
-install/libpic170x.lpp: $(build_dir)/timer0.p1
+$(main_target): $(build_dir)/timer0.p1
 	mkdir -p install/
 	$(xc8) $(xc8_opts) --output=lpp -O$@ $^
 
