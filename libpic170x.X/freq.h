@@ -16,8 +16,9 @@
 
 /**
  * \file freq.h
- * \author paul
+ * \author Paul Konstantin Gerke
  * \date 2018-07-20
+ * \brief Global timing definitions used for timing critical library components
  * 
  * This file defines important timing preprocessor variables that are used 
  * throughout all library components. All libraries are based on the 

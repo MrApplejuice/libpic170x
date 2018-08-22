@@ -1,5 +1,5 @@
-libpic170x library - v0.1
-=========================
+libpic170x library - v0.2a
+==========================
 
 Convenience library for interacting with pic16(L)F1705/1709 microcontrollers. For a full feature listing check the [documentation](http://libpic170x.craftware.info).
 
@@ -10,7 +10,8 @@ Releases can be found on the project's GitHub page.
 Current feature set
 ===================
 
-- timer0-based counter for measuring time with a coarse resolution (increment ~100 ms).
+- Timer0-based counter for measuring time with a coarse resolution (increment ~100 ms).
+- Pin input/output library.
 
 Getting started
 ===============
