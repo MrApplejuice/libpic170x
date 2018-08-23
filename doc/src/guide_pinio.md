@@ -20,6 +20,7 @@ When a PIC is reset, all pins are set to "input, high impedance mode". Therefore
 int main() {
     bool pin_state = pin_get_input(PIN_RA0);
     // True will mean that the pin was high, false means the pin was low
+    // NOTE: When reading digital inputs the pin mode should be switched first though! See below.
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
