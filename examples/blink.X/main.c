@@ -40,11 +40,15 @@
 #pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
 
+#include <stdbool.h>
+
 #include <xc.h>
 
 #define _XTAL_FREQ 8000000
+
 #include <freq.h>
 #include <timer0.h>
+#include <io_control.h>
 
 /**
  * Interrupt handler for updating timer0.
@@ -66,17 +70,16 @@ int main() {
     GIE = 1;
 
     // Configure RC0 as output
-    TRISCbits.TRISC0 = 0;
-    LATCbits.LATC0 = 0;
+    pin_set_pin_mode(PIN_RC0, true);
+    pin_set_output(PIN_RC0, false);
     
     while (1) {
         // Check if 1 scond has expired. Disable intterupts during the 
         // check&modify operation.
         GIE = 0;
         if (pic170x_timer0.ms > 1000) {
-            
-            // If yes, toggle the output signal on/off.
-            LATCbits.LATC0 = !LATCbits.LATC0;
+            // If 1 second has expired, toggle the output signal on/off.
+            pin_set_output(PIN_RC0, !pin_get_state(PIN_RC0));
             pic170x_timer0.ms -= 1000;
         }
         GIE = 1;
