@@ -40,6 +40,7 @@
 #ifndef TIMER0_H
 #define	TIMER0_H
 
+#include <stdlib.h>
 #include <stdint.h>
 
 /**

@@ -11,7 +11,7 @@ xc8_opts += \
 	--opt=+asm,+asmfile,-speed,+space \
 	--mode=free \
 	-D_XTAL_FREQ=$(xtal_freq) \
-	-D$(chip)
+	-DPIC$(chip)
 
 
 main_target = install/libpic170x_$(chip)_$(xtal_freq).lpp
@@ -20,6 +20,7 @@ build_dir = build/$(chip)/$(xtal_freq)
 header_files = \
 	libpic170x.X/timer0.h \
 	libpic170x.X/freq.h \
+	libpic170x.X/io_control.h
 
 install_header_files = \
 	$(addprefix install/include/,$(notdir $(header_files)))
@@ -32,7 +33,7 @@ clean:
 	rm -rf build
 	rm -rf doc/html/ doc/latex/
 
-$(main_target): $(build_dir)/timer0.p1
+$(main_target): $(build_dir)/timer0.p1 $(build_dir)/io_control.p1 
 	mkdir -p install/
 	$(xc8) $(xc8_opts) --output=lpp -O$@ $^
 

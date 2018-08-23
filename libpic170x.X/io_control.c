@@ -103,7 +103,11 @@ uint8_t pin_get_state(const PinDef* def) {
     if (!def || (!def->port_reg)) {
         return 0;
     }
-   return (uint8_t) ((*(def->port_reg) & def->pin_tris_bitmask != 0) ? 1 : 0);
+    volatile unsigned char* state_reg = 
+        (def->tris_reg && ((*def->tris_reg & def->pin_tris_bitmask) == 0)) 
+            ? def->latch_reg : def->port_reg;
+    
+    return (uint8_t) ((*state_reg & def->pin_tris_bitmask != 0) ? 1 : 0);
 }
 
 void pin_set_output(const PinDef* def, bool on) {
