@@ -58,14 +58,16 @@ void pin_set_pin_mode(const PinDef* def, bool output);
 
 /**
  * Reads the input value from the the given pin. Returns the value the PORTx
- * register.
+ * register if the pin is configured as input. If the pin is configured as
+ * output, the returned value will be the value of LATx, meaning the result
+ * will be the value of the *intended* output.
  * 
  * @param def
- *     The pin to read the input
+ *     The pin to read the input state from.
  * @return 
- *     Non-zero value if input is high.
+ *     True if the input is high.
  */
-uint8_t pin_get_state(const PinDef* def);
+bool pin_get_input(const PinDef* def);
 
 /**
  * Sets the digital output to the given state (LATx register)

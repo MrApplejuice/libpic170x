@@ -79,7 +79,7 @@ int main() {
         GIE = 0;
         if (pic170x_timer0.ms > 1000) {
             // If 1 second has expired, toggle the output signal on/off.
-            pin_set_output(PIN_RC0, !pin_get_state(PIN_RC0));
+            pin_set_output(PIN_RC0, !pin_get_input(PIN_RC0));
             pic170x_timer0.ms -= 1000;
         }
         GIE = 1;
