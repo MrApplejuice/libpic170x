@@ -16,7 +16,7 @@ This library is licensed under the Apache License, Version 2.0. See the the atta
 - [Timer0 library](@ref timer0-guide) for coarse time-keeping
 - [Pin IO library](@ref pinio-guide) for reading from and writing to GPIO pins
 
-# Usage  {#mainpage-usage}
+# Building/Usage  {#mainpage-usage}
 
 The library can be used in two different ways:
 
@@ -25,7 +25,7 @@ The library can be used in two different ways:
 
 Using the library as inlined sources is most likely the most useful way of using the library since the library uses preprocessor macros to compile certain library settings directly into the library to save program memory.
 
-## Requirements
+## General requirements
 
 In order to compile and use any part of the library you must have installed:
 
@@ -40,7 +40,7 @@ Additional dependecies:
 
 Using the library as inlined sources is most likely the easiest way to use the library. Just copy all the source files for libraries that you would like to use into your your project and compile them yourself. There are not many things to consider. You only need to define `_XTAL_FREQ` to match your desired processor frequency and you are ready to roll!
 
-## Use as static library     {#mainpage-as-library}
+## Build/use as static library     {#mainpage-as-library}
 
 Using the library as a static library allows staying up to date with the latest releases of the library easily. However, due to the light-weight setup of the library certain aspects like clock speeds and prescaler factors are directly compiled to binary code and cannot be set when using the library. The values in question specifically are:
 
