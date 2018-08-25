@@ -92,6 +92,7 @@ digraph lib_dep_tree {
 
   freq_h[label="freq.h", URL="@ref freq.h"];
   timer0[URL="@ref timer0-guide"];
+  io_lib[label="Pin IO",URL="@ref pinio-guide"];
 
   timer0 -> freq_h;
 }
