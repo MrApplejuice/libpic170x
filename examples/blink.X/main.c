@@ -13,6 +13,13 @@
    See the License for the specific language governing permissions and
    limitations under the License.
  */
+/**
+ * \file blink.X/main.c
+ * \author Paul K. Gerke
+ * \date 2018-08-26
+ * \brief Blinking LED example demonstrating the use of timer0 and the Pin IO library.
+ * 
+ */
 
 // PIC16LF1705 Configuration Bit Settings
 

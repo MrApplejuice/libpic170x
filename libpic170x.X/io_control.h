@@ -16,8 +16,6 @@
 
 /**
  * \file io_control.h
- * \author Paul Konstantin Gerke
- * \date 2018-07-22
  * \brief GPIO input/output library allowing to write to and read from IO pins.
  * 
  * The library defines a set of `pin_` functions that operate on pin-defintions.

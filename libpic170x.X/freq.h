@@ -16,9 +16,8 @@
 
 /**
  * \file freq.h
- * \author Paul Konstantin Gerke
- * \date 2018-07-20
- * \brief Global timing definitions used for timing critical library components
+ * \brief Global timing definitions used for timing critical library components.
+ * 
  * 
  * This file defines important timing preprocessor variables that are used 
  * throughout all library components. All libraries are based on the 
@@ -46,7 +45,7 @@
  * become unusable due to huge counter steps.
  * 
  * OSCCAL_BITS
- * -----------
+ * 
  * One of the core-featues of `freq.h` is that is exposes the OSCCON bits that 
  * the  main application should set through the preprocessor definition 
  * `OSCCON_BITS`. Before using any other library functions this OSCCON bits 

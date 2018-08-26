@@ -16,8 +16,6 @@
 
 /**
  * \file timer0.h
- * \author Paul Konstantin Gerke
- * \date 2018-07-20
  * \brief Coarse timing library for measuring times in the background.
  * 
  * Timer0 configures timer0 of a PIC16(L)F170x chip as continuous ms 
