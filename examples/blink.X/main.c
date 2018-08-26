@@ -53,9 +53,9 @@
 
 #define _XTAL_FREQ 8000000
 
-#include <freq.h>
-#include <timer0.h>
-#include <io_control.h>
+#include <libpic170x/freq.h>
+#include <libpic170x/timer0.h>
+#include <libpic170x/io_control.h>
 
 /**
  * Interrupt handler for updating timer0.
