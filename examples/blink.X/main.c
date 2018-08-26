@@ -80,7 +80,8 @@ int main() {
         while (true) {} // The safe fail-state... NOP forever
     }
     
-    // Set OSCCON bits from library definitions
+    // Set OSCCON bits from macro that is defined in freq.h
+
     OSCCON = OSCCON_BITS;
     
     // Intilaize timer0 and enable interrupts

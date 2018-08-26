@@ -143,6 +143,8 @@ extern const uint32_t __LIBPIC170X_BUILT_XTAL_FREQ;
 extern const char* __LIBPIC170X_BUILT_DEVICE_NAME;
 
 /**
+ * \brief Verify matching configuration parameters between main project and static library
+ * 
  * This functions allows one to check if the arguments used while building the
  * library are matching the build arguments for the current project. Generally,
  * this should not be required, but it can be handy for sanity checks. It is
