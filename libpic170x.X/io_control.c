@@ -14,11 +14,11 @@
    limitations under the License.
  */
 
-#include "io_control.h"
-
-#include <string.h>
+#include "libpic170x/io_control.h"
 
 #include <xc.h>
+
+#include <string.h>
 
 #if defined(PIC16F1705) || defined(PIC16LF1705)
 const PinDef c_PIN_RA0 = {0b00000000, &RA0PPS, 0b00000001, &TRISA, &PORTA, &ANSELA, &LATA};

@@ -14,11 +14,10 @@
    limitations under the License.
  */
 
-#include "timer0.h"
+#include "libpic170x/timer0.h"
+#include "libpic170x/freq.h"
 
 #include <xc.h>
-
-#include "freq.h"
 
 Timer0 pic170x_timer0;
 
