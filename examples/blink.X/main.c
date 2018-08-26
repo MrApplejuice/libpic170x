@@ -15,9 +15,9 @@
  */
 /**
  * \file blink.X/main.c
- * \author Paul K. Gerke
- * \date 2018-08-26
  * \brief Blinking LED example demonstrating the use of timer0 and the Pin IO library.
+ * 
+ * 
  * 
  */
 

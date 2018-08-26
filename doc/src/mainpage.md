@@ -16,6 +16,10 @@ This library is licensed under the Apache License, Version 2.0. See the the atta
 - [Timer0 library](@ref timer0-guide) for coarse time-keeping
 - [Pin IO library](@ref pinio-guide) for reading from and writing to GPIO pins
 
+## Examples
+
+Example implementations showcasing the different libraries, can be found on the [examples page](@ref examples-page).
+
 # Building/Usage  {#mainpage-usage}
 
 The library can be used in two different ways:
