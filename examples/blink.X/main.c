@@ -14,11 +14,10 @@
    limitations under the License.
  */
 /**
- * \file blink.X/main.c
- * \brief Blinking LED example demonstrating the use of timer0 and the Pin IO library.
+ * \file main.c
+ * \brief Blinking LED example demonstrating the use of [timer0](@ref timer0-guide) and the [Pin IO library](@ref pinio-guide).
  * 
- * 
- * 
+ * Check the [examples page](@ref examples-page) for details.
  */
 
 // PIC16LF1705 Configuration Bit Settings
@@ -51,13 +50,17 @@
 
 #include <xc.h>
 
+//! Project is configured for 8 MHz operation
 #define _XTAL_FREQ 8000000
 
+// Include all relevant libpic170x libraries
 #include <libpic170x/freq.h>
 #include <libpic170x/timer0.h>
 #include <libpic170x/io_control.h>
 
 /**
+ * \brief Interrupt handler for updating timer0.
+ * 
  * Interrupt handler for updating timer0.
  */
 void interrupt int_handler() {
@@ -65,6 +68,8 @@ void interrupt int_handler() {
 }
 
 /**
+ * \brief Main entrypoint 
+ * 
  * The main implements a "blink" for an LED that is conencted to pin RC0. The
  * connected LED will approximately blink once every second.
  */
@@ -82,7 +87,7 @@ int main() {
     
     while (1) {
         // Check if 1 scond has expired. Disable intterupts during the 
-        // check&modify operation.
+        // check-and-modify operation.
         GIE = 0;
         if (pic170x_timer0.ms > 1000) {
             // If 1 second has expired, toggle the output signal on/off.
@@ -90,5 +95,8 @@ int main() {
             pic170x_timer0.ms -= 1000;
         }
         GIE = 1;
+        
+        // .. here we can do some other things - timing will be done in 
+        // the background
     }
 }

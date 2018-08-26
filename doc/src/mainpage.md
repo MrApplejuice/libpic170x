@@ -9,7 +9,7 @@ Please refer to the [Usage](#mainpage-usage) section for details on how to use t
 
 # License
 
-This library is licensed under the Apache License, Version 2.0. See the the attached [LICENSE.md](@ref LICENSE.md) file for details.
+This library is licensed under the Apache License, Version 2.0. See the the attached [LICENSE.md](@ref doc/src/LICENSE.md) file for details.
 
 # Features
 
