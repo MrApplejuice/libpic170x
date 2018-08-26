@@ -38,20 +38,18 @@
  * PIN_RA3     | ✓               | ✓
  * PIN_RA4     | ✓               | ✓
  * PIN_RA5     | ✓               | ✓
- * PIN_RB4     | x               | ✓
- * PIN_RB5     | x               | ✓
- * PIN_RB6     | x               | ✓
- * PIN_RB7     | x               | ✓
+ * PIN_RB4     | NULL            | ✓
+ * PIN_RB5     | NULL            | ✓
+ * PIN_RB6     | NULL            | ✓
+ * PIN_RB7     | NULL            | ✓
  * PIN_RC0     | ✓               | ✓
  * PIN_RC1     | ✓               | ✓
  * PIN_RC2     | ✓               | ✓
  * PIN_RC3     | ✓               | ✓
  * PIN_RC4     | ✓               | ✓
  * PIN_RC5     | ✓               | ✓
- * PIN_RC6     | x               | ✓
- * PIN_RC7     | x               | ✓
- * 
- * Pins defintions marked with a `x`, will be set to NULL.
+ * PIN_RC6     | NULL            | ✓
+ * PIN_RC7     | NULL            | ✓
  * 
  * For a working example on how to use the library, check the "blink" example,
  * in this repository.
