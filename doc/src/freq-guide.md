@@ -40,6 +40,3 @@ To check if the configured project _XTAL_FREQ and processor type matches the sta
 
 See the [blink.X/main.c](@ref blink.X/main.c) for an example.
 
-
-# Configuration macros
-
