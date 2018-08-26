@@ -74,6 +74,12 @@ void interrupt int_handler() {
  * connected LED will approximately blink once every second.
  */
 int main() {
+    // First check the library configuration... if the library configuration
+    // is faulty, exit into an infinite loop to before doing anything else.
+    if (!libpic170x_check_library_build_arguments()) {
+        while (true) {} // The safe fail-state... NOP forever
+    }
+    
     // Set OSCCON bits from library definitions
     OSCCON = OSCCON_BITS;
     

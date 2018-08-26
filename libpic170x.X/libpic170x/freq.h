@@ -67,6 +67,10 @@
 #ifndef FREQ_H
 #define	FREQ_H
 
+#include <stdint.h>
+#include <stdbool.h>
+#include <string.h>
+
 #ifndef _XTAL_FREQ 
 #error "_XTAL_FREQ must be set to a valid value"
 #endif
@@ -120,6 +124,42 @@
     #error "Invalid frequency"
   #endif
 #endif
+
+#ifdef _16LF1705
+  #define __LIBPIC170X_DEVICE_NAME "PIC16LF1705"
+#elif _16F1705
+  #define __LIBPIC170X_DEVICE_NAME "PIC16F1705"
+#elif _16LF1709
+  #define __LIBPIC170X_DEVICE_NAME "PIC16ÖF1709"
+#elif _16F1709
+  #define __LIBPIC170X_DEVICE_NAME "PIC16F1709"
+#else
+  #error "Unsupported chip"
+#endif
+
+//! Stores the _XTAL_FREQ that was used while building the static libpic170x library
+extern const uint32_t __LIBPIC170X_BUILT_XTAL_FREQ;
+//! Stores the device name (as string) used to build the static libpic170x library
+extern const char* __LIBPIC170X_BUILT_DEVICE_NAME;
+
+/**
+ * This functions allows one to check if the arguments used while building the
+ * library are matching the build arguments for the current project. Generally,
+ * this should not be required, but it can be handy for sanity checks. It is
+ * advisable to include a call to this function at the start of any program and
+ * exit to a safe fail-state when the function returns false since the behavior
+ * of libpic170x is undefined if the build arguments do not match between
+ * a libpic170x static library and main application.
+ * 
+ * @return 
+ *     Returns true in case the build arguments are matching. If the function
+ *     returns false, exit to a safe fail-state.
+ */
+static bool libpic170x_check_library_build_arguments() {
+    return 
+        (strcmp(__LIBPIC170X_BUILT_DEVICE_NAME, __LIBPIC170X_DEVICE_NAME) == 0)
+        && (__LIBPIC170X_BUILT_XTAL_FREQ == _XTAL_FREQ);
+}
 
 #endif	/* FREQ_H */
 

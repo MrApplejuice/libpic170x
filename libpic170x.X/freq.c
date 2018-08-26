@@ -1,0 +1,4 @@
+#include "libpic170x/freq.h"
+
+const uint32_t __LIBPIC170X_BUILT_XTAL_FREQ = _XTAL_FREQ;
+const char* __LIBPIC170X_BUILT_DEVICE_NAME = __LIBPIC170X_DEVICE_NAME;

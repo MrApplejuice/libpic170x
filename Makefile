@@ -15,8 +15,10 @@ xc8_opts += \
 
 
 main_target = install/libpic170x_$(chip)_$(xtal_freq).lpp
-build_dir = build/$(chip)/$(xtal_freq)
+build_dir = build/$(chip)/$(xtal_freq)/
 
+source_files := \
+	freq.c timer0.c io_control.c
 header_files := \
 	libpic170x.X/libpic170x/timer0.h \
 	libpic170x.X/libpic170x/freq.h \
@@ -34,7 +36,7 @@ clean:
 	rm -rf build
 	rm -rf doc/html/ doc/latex/
 
-$(main_target): $(build_dir)/timer0.p1 $(build_dir)/io_control.p1 
+$(main_target): $(addprefix $(build_dir),$(notdir $(addsuffix .p1,$(basename $(source_files)))))
 	mkdir -p install/
 	$(xc8) $(xc8_opts) --output=lpp -O$@ $^
 
@@ -44,7 +46,7 @@ $(install_header_dir):
 $(install_header_dir)%.h: libpic170x.X/libpic170x/%.h $(install_header_dir)
 	cp -v $< $@
 
-$(build_dir)/%.p1: libpic170x.X/%.c $(header_files)
+$(build_dir)%.p1: libpic170x.X/%.c $(header_files)
 	mkdir -p $(build_dir)
 	$(xc8) $(xc8_opts) --pass1 -O$@ $<
 
