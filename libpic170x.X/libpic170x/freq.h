@@ -75,6 +75,13 @@
 #error "_XTAL_FREQ must be set to a valid value"
 #endif
 
+#ifdef __LIBPIC170X_DOXYGEN
+  //! OSCCON bits that can derived from the set _XTAL_FREQ that the OSCCON register can be initailized with.
+  #define OSCCON_BITS 0
+  //! Processor name internally used by libpic170x_check_library_build_arguments()
+  #define __LIBPIC170X_DEVICE_NAME "PIC16LF1705"
+#endif
+
 #if _XTAL_FREQ == 32000000
   #define OSCCON_BITS 0b11110010
 

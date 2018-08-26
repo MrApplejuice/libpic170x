@@ -95,7 +95,7 @@ digraph lib_dep_tree {
 
   node [shape=block,fontcolor=blue];
 
-  freq_h[label="freq.h", URL="@ref freq.h"];
+  freq_h[label="freq.h", URL="@ref freq-guide"];
   timer0[URL="@ref timer0-guide"];
   io_lib[label="Pin IO",URL="@ref pinio-guide"];
 
