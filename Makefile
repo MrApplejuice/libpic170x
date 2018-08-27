@@ -28,13 +28,15 @@ install_header_dir := install/include/libpic170x/
 install_header_files = \
 	$(addprefix $(install_header_dir),$(notdir $(header_files)))
 
-.PHONY: all doc clean
+library_version := $(shell cat VERSION)
+
+.PHONY: all doc clean release check_version
 
 all: $(main_target) $(install_header_files)
 
 clean:
 	rm -rf build
-	rm -rf doc/html/ doc/latex/
+	rm -rf install/doc/
 
 $(main_target): $(addprefix $(build_dir),$(notdir $(addsuffix .p1,$(basename $(source_files)))))
 	mkdir -p install/
@@ -51,5 +53,9 @@ $(build_dir)%.p1: libpic170x.X/%.c $(header_files)
 	$(xc8) $(xc8_opts) --pass1 -O$@ $<
 
 doc:
-	doxygen
+	VERSION_NUMBER=$(library_version) doxygen
 
+check_version:
+	bash ./check_version.sh $(library_version)
+
+release: check_version
