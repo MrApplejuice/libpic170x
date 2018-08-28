@@ -1,0 +1,5 @@
+<map id="examples/blink.X/main.c" name="examples/blink.X/main.c">
+<area shape="rect" id="node4" href="$freq_8h.html" title="Global timing definitions used for timing critical library components. " alt="" coords="42,80,159,107"/>
+<area shape="rect" id="node7" href="$timer0_8h.html" title="Coarse timing library for measuring times in the background. " alt="" coords="359,80,490,107"/>
+<area shape="rect" id="node9" href="$io__control_8h.html" title="GPIO input/output library allowing to write to and read from IO pins. " alt="" coords="184,80,335,107"/>
+</map>
