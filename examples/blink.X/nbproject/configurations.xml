@@ -39,7 +39,7 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>../../install/libpic170x_16LF1705_8000000.lpp</linkerLibFileItem>
+            <linkerLibFileItem>../../install/lib/libpic170x_16LF1705_8000000.lpp</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
