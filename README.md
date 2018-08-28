@@ -1,7 +1,7 @@
-libpic170x library - v0.2
-=========================
+libpic170x library - v0.3a
+==========================
 
-Convenience library for interacting with pic16(L)F1705/1709 microcontrollers. For a full feature listing check the [documentation](http://libpic170x.craftware.info/v0.2).
+Convenience library for interacting with pic16(L)F1705/1709 microcontrollers. For a full feature listing check the [documentation](http://libpic170x.craftware.info/v0.3).
 
 The library is published under the the [Apache License version 2.0](LICENSE.md).
 
