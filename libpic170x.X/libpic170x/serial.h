@@ -21,8 +21,8 @@
  * 
  */
 
-#ifndef UART_H
-#define	UART_H
+#ifndef SERIAL_H
+#define	SERIAL_H
 
 #include <stdint.h>
 #include <stdbool.h>
