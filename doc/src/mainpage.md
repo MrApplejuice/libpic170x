@@ -16,6 +16,7 @@ This library is licensed under the Apache License, Version 2.0. See the the atta
 - [freq.h](@ref freq-guide) library configuration
 - [Timer0 library](@ref timer0-guide) for coarse time-keeping
 - [Pin IO library](@ref pinio-guide) for reading from and writing to GPIO pins
+- [Serial library](@ref serial-guide) for using the PIC's UART module for serial communication
 
 ## Examples
 
@@ -98,8 +99,11 @@ digraph lib_dep_tree {
   freq_h[label="freq.h", URL="@ref freq-guide"];
   timer0[URL="@ref timer0-guide"];
   io_lib[label="Pin IO",URL="@ref pinio-guide"];
+  serial_lib[label="Serial",URL="@ref serial-guide"];
 
   timer0 -> freq_h;
+  serial_lib -> freq_h;
+  serial_lib -> io_lib;
 }
 
 \enddot
