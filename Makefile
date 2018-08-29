@@ -15,14 +15,13 @@ xc8_opts += \
 
 
 main_target = install/lib/libpic170x_$(chip)_$(xtal_freq).lpp
-build_dir = build/$(chip)/$(xtal_freq)/
+build_dir := build/$(chip)/$(xtal_freq)/
+header_src_dir := libpic170x.X/libpic170x/
 
-source_files := \
-	freq.c timer0.c io_control.c
+source_files := freq.c timer0.c io_control.c serial.c
 header_files := \
-	libpic170x.X/libpic170x/timer0.h \
-	libpic170x.X/libpic170x/freq.h \
-	libpic170x.X/libpic170x/io_control.h
+	$(addprefix $(header_src_dir), \
+		$(addsuffix .h,$(basename $(source_files))))
 
 install_header_dir := install/include/libpic170x/
 install_header_files = \
@@ -42,14 +41,14 @@ clean:
 	rm -rf install/include/
 	rm -rf install/lib/
 
-$(main_target): $(addprefix $(build_dir),$(notdir $(addsuffix .p1,$(basename $(source_files)))))
+$(main_target): $(addprefix $(build_dir),$(addsuffix .p1,$(basename $(source_files))))
 	mkdir -p $(dir $@)
 	$(xc8) $(xc8_opts) --output=lpp -O$@ $^
 
 $(install_header_dir):
 	mkdir -p $(install_header_dir)
 
-$(install_header_dir)%.h: libpic170x.X/libpic170x/%.h $(install_header_dir)
+$(install_header_dir)%.h: $(header_src_dir)%.h $(install_header_dir)
 	cp -v $< $@
 
 $(build_dir)%.p1: libpic170x.X/%.c $(header_files)
