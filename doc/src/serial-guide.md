@@ -41,7 +41,46 @@ if (!real_baudrate) {
 
 # Sending/Receiving
 
-- Internal buffers
+After initializing the module, it is time to read from and write to the serial interface. This is done by directly reading from and writing to receive and send buffers in Serial structure itself. Example:
+
+~~~~~~~~~~~~~~~~~{.c}
+Serial serial;
+int real_baudrate = serial_init(&serial, PIN_RA4, PIN_RA5, 9600);
+// ...
+
+// Check if we received some characters
+if (serial.receive_len > 0) {
+    // Shift the send-buffer to the left
+    memove(
+        serial.send_queue,
+        serial.send_queue + send_queue.send_index,
+        SERIAL_QUEUE_LEN - send_queue.send_index);
+    send_queue.send_len -= send_queue.send_index;
+    send_queue.send_index = 0;
+
+    // Safely append receive queue to send-buffer, truncating data
+    // if necessary (should never be necessary, actually)
+    int bytesToCopy = serial.receive_len;
+    if (bytesToCopy > SERIAL_QUEUE_LEN - send_queue.send_index) {
+        bytesToCopy = SERIAL_QUEUE_LEN - send_queue.send_index;
+    }
+    memmove(
+        serial.send_queue + send_queue.send_len,
+        serial.receive_queue,
+        bytesToCopy);
+    send_queue.send_len += bytesToCopy;
+    
+    serial.receive_len = 0;
+}
+
+~~~~~~~~~~~~~~~~~
+
+The example illustrates how a simple echo-program might be implemented.
+
+
+## Interrupts
+
+- Should work, but never tested this!
 
 
 # Example
