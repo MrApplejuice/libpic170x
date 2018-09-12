@@ -115,8 +115,10 @@ void pin_set_pin_mode(const PinDef* def, bool output);
 bool pin_get_input(const PinDef* def);
 
 /**
- * Sets the digital output to the given state (LATx register). Will only have
- * an effect if the pin has been set to output-mode before.
+ * Sets the digital output to the given state (LATx register). Setting the 
+ * output on a pin that is not an output yet, allows initializing the latch
+ * register and therefore the output signal that the output should assume once
+ * it is configured as output.
  * 
  * @param def
  *     The pin to write.

@@ -47,7 +47,7 @@ uint32_t serial_init(
                 // Switch to an even faster clock speed for better resolution
                 BRGH = 1;
                 used_scale_factor = 4;
-                rate = _XTAL_FREQ / used_scale_factor / 4 - 1;
+                rate = _XTAL_FREQ / baud_rate / used_scale_factor - 1;
                 
                 if (rate <= 1) {
                     return 0; // way too fast!
@@ -57,7 +57,7 @@ uint32_t serial_init(
 
         SP1BRGH = (rate >> 8) & 0xFF;
         SP1BRGL = rate & 0xFF;
-        baud_rate = (rate + 1) * used_scale_factor * _XTAL_FREQ;
+        baud_rate = _XTAL_FREQ / ((rate + 1) * used_scale_factor);
     }
     
     if (rc_pin != NULL) {
