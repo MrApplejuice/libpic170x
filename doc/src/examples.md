@@ -23,3 +23,12 @@ Make sure to have the [MPLAB-X IDE](https://www.microchip.com/mplab/mplab-x-ide)
 By default, a PICkit 3 should be configured. If not configure your programming device and enable the "power the target circuit-option" in your IDE, or power your circuit with other means.
 
 Now, everything should be ready to go. Press "Run Main Project" (provided that the blink-project is your only open project), and the demo should upload and run.
+
+# Serial Echo
+
+The serial echo example...
+
+![Demo circuit](img/libpic170x-examples-serialecho_circuit.svg)
+![Breadboard](img/libpic170x-examples-serialecho_breadboard_small.jpg)
+
+Schematic: [https://easyeda.com/trugata/libpic170x-examples-serialecho](https://easyeda.com/trugata/libpic170x-examples-serialecho)
