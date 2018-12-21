@@ -26,9 +26,16 @@ Now, everything should be ready to go. Press "Run Main Project" (provided that t
 
 # Serial Echo
 
-The serial echo example...
+The serial echo example illustrates how to use the [serial](@ref serial-guide) library to send and receive data. The example is designed for the PIC16LF1705 and makes use of two LEDs that visualize sending and receiving of a single test byte.
+
+To try out the example, built up the following circuit:
 
 ![Demo circuit](img/libpic170x-examples-serialecho_circuit.svg)
 ![Breadboard](img/libpic170x-examples-serialecho_breadboard_small.jpg)
 
 Schematic: [https://easyeda.com/trugata/libpic170x-examples-serialecho](https://easyeda.com/trugata/libpic170x-examples-serialecho)
+
+
+Data is sent from pin RC5 and received on ping RC3. During initialization, the PIC will send a test byte (0xE2) via the output pin. The output pin is connected to the input pin via resistor R3. The reception EUSART will receive the sent character and emit an interrupt in the source code which write the received character into a buffer. When the character was received, the received character is compared to the reference test byte (0xE2). If they are equal, LED2 flashes once (picture color: green). Then the received byte is resent. During sending LED1 flashes once (picture color: red).
+
+The result should alternating flashing of LED1 and LED2 as the test byte is sent and received over and over again. The communication speed is 9600 baud. Disconnecting R3 while the circuit is running will interrupt the send-receive cycle. To restart it the PIC needs to be reset.
