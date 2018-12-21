@@ -3,6 +3,7 @@ Guide: Timer0 library  {#timer0-guide}
 
 The timer0 library allows rough time keeping by implementing a counter that counts the elapsed milliseconds (and micro seconds) using the PIC's timer0. The counter is updated using an interrupt handler that must be invoked in the general interrupt handler routine. The counter explicitly is designed for _rough_ time keeping to not waste too many processor cycles on updating the counter. Increments are limited to a maximum of ~131 ms by adjusting the internal timer0 prescaler. This should be generally be precise enough to handle user-oriented delays and timings. This library is explicitly not designed for close time keeping.
 
+The [blink example](@ref examples-page-blink) illustrates how to utlize the timer0 library for timed blinking.
 
 # Timing details
 

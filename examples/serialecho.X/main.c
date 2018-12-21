@@ -15,7 +15,7 @@
  */
 /**
  * \file main.c
- * \brief Serial communication example demonstrating the use of [serial](@ref serial-guide).
+ * \brief Serial communication example demonstrating the use of the [serial library](@ref serial-guide).
  * 
  * Check the [examples page](@ref examples-page) for details.
  */
@@ -74,7 +74,9 @@ char received_character;
 /**
  * \brief Interrupt handler for updating timer0.
  * 
- * Interrupt handler processing the receive queue of the serial interface.
+ * Interrupt handler processing the receive queue of the serial interface. The
+ * first byte of the receive queue will be copied into the globa variable
+ * `received_character` which is picked up by the program's main loop.
  */
 void interrupt int_handler() {
     if (RCIF) {
@@ -106,10 +108,9 @@ int main() {
     // Initializes the serial interface at 9600 baud
     serial_init(&serial, RECV_PIN, SEND_PIN, 9600);
     
-    // Setup output pins to geberate sine visual output
+    // Configure LED pins to act as outputs
     pin_set_pin_mode(SEND_LED_PIN, true);
     pin_set_output(SEND_LED_PIN, false);
-    
     pin_set_pin_mode(RECV_LED_PIN, true);
     pin_set_output(RECV_LED_PIN, false);
 

@@ -129,5 +129,5 @@ uint32_t serial_init(
 void serial_handle_queue(Serial* serial);
 
 
-#endif	/* UART_H */
+#endif	/* SERIAL_H */
 
