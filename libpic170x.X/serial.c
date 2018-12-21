@@ -95,6 +95,8 @@ uint32_t serial_init(
 }
 
 void serial_handle_queue(Serial* uart) {
+    char oldGIE = GIE;
+    GIE = 0;
     if (uart->__rc_pin) {
         if (OERR) {
             // Reset the rc_pin, discard input since it is probably corrupted
@@ -126,5 +128,6 @@ void serial_handle_queue(Serial* uart) {
             }
         }
     }
+    GIE = oldGIE;
 }
 
